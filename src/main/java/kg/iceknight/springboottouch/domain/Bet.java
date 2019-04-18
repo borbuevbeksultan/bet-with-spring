@@ -20,4 +20,12 @@ public class Bet {
 
     @Column(name = "amount")
     private BigDecimal amount;
+
+    @Column(name = "gain")
+    private BigDecimal gain;
+
+    @ManyToOne
+    @JoinColumn(name = "line")
+    private Line line;
+
 }

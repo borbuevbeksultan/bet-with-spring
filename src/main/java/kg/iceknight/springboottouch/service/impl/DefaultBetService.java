@@ -17,8 +17,17 @@ public class DefaultBetService implements BetService {
     private final BetRepository betRepository;
 
     @Override
-    public Bet madeBet(Game forGame, Line withLine, BigDecimal withAmount) {
-        return null;
+    public Bet makeBet(Game forGame, Line withLine, BigDecimal withAmount) {
+        BigDecimal coefficient = withLine.getCoefficient();
+
+        BigDecimal gain = coefficient.multiply(withAmount);
+        Bet bet = new Bet();
+
+        bet.setGain(gain);
+        bet.setAmount(withAmount);
+        bet.setLine(withLine);
+
+        return betRepository.save(bet);
     }
 
     @Override

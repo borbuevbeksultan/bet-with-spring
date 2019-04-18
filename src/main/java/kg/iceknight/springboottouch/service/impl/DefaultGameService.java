@@ -17,4 +17,9 @@ public class DefaultGameService implements GameService {
         return gameRepository.getOne(id);
     }
 
+    @Override
+    public void dispose(Game game) {
+        gameRepository.delete(game);
+    }
+
 }

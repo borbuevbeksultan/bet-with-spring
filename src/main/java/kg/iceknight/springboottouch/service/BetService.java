@@ -8,6 +8,6 @@ import java.math.BigDecimal;
 
 public interface BetService extends Reader<Bet> {
 
-    Bet madeBet(Game forGame, Line withLine, BigDecimal withAmount);
+    Bet makeBet(Game forGame, Line withLine, BigDecimal withAmount);
 
 }

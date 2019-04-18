@@ -8,6 +8,7 @@ import kg.iceknight.springboottouch.service.BetService;
 import kg.iceknight.springboottouch.service.GameService;
 import kg.iceknight.springboottouch.service.LineService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
@@ -21,6 +22,7 @@ public class DefaultBetEndpoint implements BetEndpoint {
     private final GameService gameService;
 
     @Override
+    @Transactional
     public void makeBet(@Valid BettingDto bettingDto) {
         Long gameId = bettingDto.getGameId();
         BigDecimal amount = bettingDto.getAmount();
@@ -29,7 +31,7 @@ public class DefaultBetEndpoint implements BetEndpoint {
         Line line = lineService.get(lineId);
         Game game = gameService.get(gameId);
 
-        betService.madeBet(game, line, amount);
+        betService.makeBet(game, line, amount);
     }
 
 }
