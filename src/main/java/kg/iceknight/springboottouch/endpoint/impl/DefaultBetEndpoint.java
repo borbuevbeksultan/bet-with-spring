@@ -1,9 +1,10 @@
-package kg.iceknight.springboottouch.endpoint;
+package kg.iceknight.springboottouch.endpoint.impl;
 
 import kg.iceknight.springboottouch.annotation.Endpoint;
 import kg.iceknight.springboottouch.domain.Game;
 import kg.iceknight.springboottouch.domain.Line;
 import kg.iceknight.springboottouch.dto.BettingDto;
+import kg.iceknight.springboottouch.endpoint.BetEndpoint;
 import kg.iceknight.springboottouch.service.BetService;
 import kg.iceknight.springboottouch.service.GameService;
 import kg.iceknight.springboottouch.service.LineService;
